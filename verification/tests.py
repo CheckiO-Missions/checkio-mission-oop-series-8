@@ -215,14 +215,14 @@ if not 'drive' in vars(Car):
 
 params2 = signature(Car.drive).parameters
 if not all((len(params2) ==  2, 'self' in params2, 'distance' in params2)):
-    raise NotImplementedError("Check 'drive' arguments")
+    raise NotImplementedError("Check number and names of 'drive' arguments")
 
 if not "yet_another_car" in USER_GLOBAL:
     raise NotImplementedError("Where is 'yet_another_car'?")
 
 yet_another_car = USER_GLOBAL['yet_another_car']
 
-if not isinstance(yet_another_car, Car):
+if (not isinstance(yet_another_car, Car)) or isinstance(yet_another_car, ElectricCar):
     raise TypeError("'yet_another_car' should be an instance of 'Car' class")
 
 if not hasattr(yet_another_car, "brand"):
