@@ -244,7 +244,7 @@ if not isinstance(yet_another_car.is_used, bool):
     raise TypeError("'is_used' attribute should be of type 'bool'")
 
 if not yet_another_car.is_used:
-    raise Warning("drive some km's with 'yet_another_car'")
+    raise Warning("drive some km's with 'yet_another_car'.'drive' is not implemented or called")
 """
 
 run_test = """
