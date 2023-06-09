@@ -299,4 +299,14 @@ with contextlib.redirect_stdout(io.StringIO()) as stdout:
 #                      test="'super().__init__' in inspect.getsource(ElectricCar.__init__)",
 #                      answer=True,
 #                      show_code=""),
+        prepare_test(middle_code="Cars = Car(), ElectricCar(10), ElectricCar(20), Car(), ElectricCar(25), Car()",
+                     test='''for ind, dist in enumerate(("", 10, "", 15, 12, "")):
+    Cars[ind].drive(dist)''',
+                     asnwer="Wrong 'distance' value type\n
+Driven 10 km on electric motor\n
+Wrong 'distance' value type\n
+Driven 15 km\n
+Driven 12 km on electric motor\n
+Wrong 'distance' value type\n",
+                     show_code="")
 ]}
