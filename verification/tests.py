@@ -302,11 +302,11 @@ with contextlib.redirect_stdout(io.StringIO()) as stdout:
         prepare_test(middle_code="Cars = Car(), ElectricCar(10), ElectricCar(20), Car(), ElectricCar(25), Car()",
                      test='''for ind, dist in enumerate(("", 10, "", 15, 12, "")):
     Cars[ind].drive(dist)''',
-                     asnwer="Wrong 'distance' value type\n
+                     asnwer='''Wrong 'distance' value type\n
 Driven 10 km on electric motor\n
 Wrong 'distance' value type\n
 Driven 15 km\n
 Driven 12 km on electric motor\n
-Wrong 'distance' value type\n",
+Wrong 'distance' value type\n''',
                      show_code="")
 ]}
